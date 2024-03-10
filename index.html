@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Slide Down a Navigation Bar on Scroll
+		using HTML CSS and JavaScript
+	</title>
+	
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	
+	<style>
+	
+		/* styling article tag component */
+		article {
+			position: fixed;
+			margin-left: 10px;
+		}
+		
+		/* styling navlist */
+		#navlist {
+			background-color: #0074D9;
+			position: fixed;
+			left: 45%;
+			top: -60px;
+			width: auto;
+			display: block;
+			transition: top 0.3s;
+		}
+		
+		/* styling navlist anchor element */
+		#navlist a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 12px;
+			text-decoration: none;
+			font-size: 15px;
+		}
+		
+		/* hover effect of navlist anchor element */
+		#navlist a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<!-- logo with tag -->
+	<article>
+		<h1 style="color:rgb(229, 15, 40);">
+			IIIT_A ASSIGNMENT
+		</h1>
+		
+		<b>
+			A WEB DEVELOPMENT
+		</b>
+		
+		
+<p>
+    Web development encompasses the creation and maintenance of websites and web applications. It involves several key components, including front-end development, which focuses on user interfaces and experiences using languages like HTML, CSS, and JavaScript. Back-end development manages server-side logic, databases, and application functionality, often utilizing frameworks like Node.js, Django, or Ruby on Rails. Full-stack development combines both front-end and back-end skills. Additionally, web development incorporates aspects of user experience (UX) design, ensuring websites are intuitive and easy to navigate. Mobile responsiveness and accessibility are increasingly vital considerations. Continuous learning is essential due to the rapid evolution of technologies and frameworks. Collaboration and communication skills are also crucial for working in multidisciplinary teams. In summary, web development requires proficiency in various tools and technologies to create functional, visually appealing, and user-friendly websites and applications.
+		</p>
+
+	</article>
+	
+	<!-- Navbar items -->
+	<div id="navlist">
+		<a href="#">Home</a>
+		<a href="#">About Us</a>
+		<a href="#">Our project</a>
+		<a href="#">Careers</a>
+		<a href="#">Contact Us</a>
+	</div>
+
+	<!-- for creating scroll -->
+	<div class="scrollable"
+		style="padding:15px 15px 4500px;">
+	</div>
+
+	<script>
+	
+		// When the user scrolls down then
+		// slide down the navbar
+		window.onscroll = function() {
+			scroll()
+		};
+
+		function scroll() {
+			if (document.body.scrollTop > 20 || 
+					document.documentElement.scrollTop > 20)
+			{
+				document.getElementById("navlist").style.top
+							= "0";
+			}
+			else {
+				document.getElementById("navlist").style.top
+							= "-60px";
+			}
+		}
+	</script>
+</body>
+
+</html>
